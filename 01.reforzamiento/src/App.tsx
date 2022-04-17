@@ -1,4 +1,5 @@
-import Contador from './components/Contador';
+// import Contador from './components/Contador';
+import ContadorConHook from './components/ContadorConHook';
 
 
 const App = () => {
@@ -8,7 +9,8 @@ const App = () => {
       <h1>Instroducción a React - TS</h1>
       <hr />
 
-      <Contador />
+      {/* <Contador /> */}
+      <ContadorConHook />
     </div>
   )
 }
