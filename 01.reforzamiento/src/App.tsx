@@ -1,4 +1,5 @@
-import ObjetosLiterales from './components/ObjetosLiterales';
+import Funciones from './components/Funciones';
+
 
 const App = () => {
 
@@ -7,7 +8,7 @@ const App = () => {
       <h1>Instroducción a React - TS</h1>
       <hr />
 
-      <ObjetosLiterales />
+      <Funciones />
     </div>
   )
 }
