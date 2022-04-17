@@ -1,4 +1,4 @@
-import TiposBasicos from './components/TiposBasicos';
+import ObjetosLiterales from './components/ObjetosLiterales';
 
 const App = () => {
 
@@ -7,7 +7,7 @@ const App = () => {
       <h1>Instroducción a React - TS</h1>
       <hr />
 
-      <TiposBasicos />
+      <ObjetosLiterales />
     </div>
   )
 }
