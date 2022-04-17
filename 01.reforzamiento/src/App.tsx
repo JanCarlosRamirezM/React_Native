@@ -1,4 +1,4 @@
-import Funciones from './components/Funciones';
+import Contador from './components/Contador';
 
 
 const App = () => {
@@ -8,7 +8,7 @@ const App = () => {
       <h1>Instroducción a React - TS</h1>
       <hr />
 
-      <Funciones />
+      <Contador />
     </div>
   )
 }
