@@ -22,7 +22,7 @@ const useUsuarios = () => {
         alert("No hay mas registros");
       }
     } catch (error) {
-      console.log(error);
+      console.log('error');
     }
   };
 
