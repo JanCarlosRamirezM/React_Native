@@ -1,12 +1,8 @@
-import {View, Text} from "react-native";
-import React from "react";
+import React from 'react';
+import {ContadorScreen} from './src/screens/Screens';
 
 const App = () => {
-  return (
-    <View style={{flex: 1, justifyContent: "center"}}>
-      <Text style={{textAlign: "center", fontSize: 45}}>Hola mundo</Text>
-    </View>
-  );
+  return <ContadorScreen />;
 };
 
 export default App;
