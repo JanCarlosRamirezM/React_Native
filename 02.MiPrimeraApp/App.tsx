@@ -1,8 +1,13 @@
 import React from 'react';
-import {ContadorScreen} from './src/screens/Screens';
+import {SafeAreaView} from 'react-native';
+import {TareaScreen_8} from './src/screens/Screens';
 
 const App = () => {
-  return <ContadorScreen />;
+  return (
+    <SafeAreaView style={{flex: 1}}>
+      <TareaScreen_8 />
+    </SafeAreaView>
+  );
 };
 
 export default App;
