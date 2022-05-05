@@ -46,7 +46,21 @@ export const CalculadoraScreen = () => {
     }
   };
 
-  const btnDelete = () => {};
+  const btnDelete = () => {
+    let negativo = '';
+    let numeroTemp = numero;
+
+    if (numeroTemp.includes('-')) {
+      negativo = '-';
+      numeroTemp = numeroTemp.substr(1);
+    }
+
+    if (numeroTemp.length > 1) {
+      setNumero(negativo + numeroTemp.slice(0, -1));
+    } else {
+      setNumero('0');
+    }
+  };
   const btnDividir = () => {};
   const btnMultiplicar = () => {};
   const btnRestar = () => {};
