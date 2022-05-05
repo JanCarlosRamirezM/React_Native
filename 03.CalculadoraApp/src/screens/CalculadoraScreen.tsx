@@ -2,10 +2,18 @@ import {View, Text} from 'react-native';
 import React, {useState} from 'react';
 import {BotonCalc} from '../components/BotonCalc';
 import {styles} from '../theme/appTheme';
+import {useRef} from 'react';
 
+enum Operadores {
+  sumar,
+  restar,
+  multiplicar,
+  dividir,
+}
 export const CalculadoraScreen = () => {
   const [numeroAnterior, setNumeroAnterior] = useState('0');
   const [numero, setNumero] = useState('0');
+  const ultimaOperacion = useRef<Operadores>();
 
   const limpiar = () => {
     setNumero('0');
@@ -61,11 +69,34 @@ export const CalculadoraScreen = () => {
       setNumero('0');
     }
   };
-  const btnDividir = () => {};
-  const btnMultiplicar = () => {};
-  const btnRestar = () => {};
-  const btnSumar = () => {};
+  const btnDividir = () => {
+    cambiarNumeroAnterior();
+    ultimaOperacion.current = Operadores.dividir;
+  };
+  const btnMultiplicar = () => {
+    cambiarNumeroAnterior();
+    ultimaOperacion.current = Operadores.multiplicar;
+  };
+  const btnRestar = () => {
+    cambiarNumeroAnterior();
+    ultimaOperacion.current = Operadores.restar;
+  };
+  const btnSumar = () => {
+    cambiarNumeroAnterior();
+    ultimaOperacion.current = Operadores.sumar;
+  };
+
+  
   const calcular = () => {};
+
+  const cambiarNumeroAnterior = () => {
+    if (numero.endsWith('.')) {
+      setNumeroAnterior(numero.slice(0, -1));
+    } else {
+      setNumeroAnterior(numero);
+    }
+    setNumero('0');
+  };
 
   return (
     <View style={styles.calculadoraContainer}>
