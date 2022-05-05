@@ -86,8 +86,31 @@ export const CalculadoraScreen = () => {
     ultimaOperacion.current = Operadores.sumar;
   };
 
-  
-  const calcular = () => {};
+  const calcular = () => {
+    const num1 = Number(numero);
+    const num2 = Number(numeroAnterior);
+
+    switch (ultimaOperacion.current) {
+      case Operadores.sumar:
+        setNumero(`${num1 + num2}`);
+        break;
+      case Operadores.restar:
+        setNumero(`${num2 - num1}`);
+        break;
+      case Operadores.multiplicar:
+        setNumero(`${num1 * num2}`);
+        break;
+      case Operadores.dividir:
+        if (num2 === 0 || num1 === 0) {
+          setNumero('0');
+        } else {
+          setNumero(`${num2 / num1}`);
+        }
+        break;
+    }
+
+    setNumeroAnterior('0');
+  };
 
   const cambiarNumeroAnterior = () => {
     if (numero.endsWith('.')) {
